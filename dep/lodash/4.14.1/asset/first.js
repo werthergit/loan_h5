@@ -1,0 +1,1 @@
+define("lodash/head",function(){function n(n){return n&&n.length?n[0]:e}var e;return n}),define("lodash/first",["./head"],function(n){return n});

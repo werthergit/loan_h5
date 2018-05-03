@@ -1,0 +1,1 @@
+define("lodash/_freeGlobal",function(){var l="object"==typeof global&&global&&global.Object===Object&&global;return l});

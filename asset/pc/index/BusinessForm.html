@@ -1,0 +1,95 @@
+<div class="business-form">
+
+    <div class="form inline">
+        <div class="group">
+            <div class="label">
+                机构名称：
+            </div>
+            <div class="controls">
+                <Input options="{{orgNameInputOptions}}" />
+            </div>
+        </div>
+        <div class="group">
+            <div class="label">
+                所在城市：
+            </div>
+            <div class="controls">
+                <Input options="{{orgCityInputOptions}}" />
+            </div>
+        </div>
+        <div class="group">
+            <div class="label">
+                课程品类：
+            </div>
+            <div class="controls">
+                <Input options="{{courseTypesInputOptions}}" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form inline">
+        <div class="group">
+            <div class="label">
+                联系人姓名：
+            </div>
+            <div class="controls">
+                <Input options="{{userNameInputOptions}}" />
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="label">
+                联系人电话：
+            </div>
+            <div class="controls">
+                <Input options="{{userPhoneInputOptions}}" />
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="label">
+                年营业额（万）：
+            </div>
+            <div class="controls">
+                <Input options="{{incomeInputOptions}}" />
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="label">
+                课单价范围：
+            </div>
+            <div class="controls">
+                <div>
+                    <Input options="{{lowPriceInputOptions}}" />
+                    <div class="label">
+                        至
+                    </div>
+                    <Input options="{{highPriceInputOptions}}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="label">
+                年招生人数：
+            </div>
+            <div class="controls">
+                <Input options="{{studentCountInputOptions}}" />
+            </div>
+        </div>
+
+        <div class="footer centered">
+            <button class="button large round"{{#if submiting}} disabled{{/if}} on-click="submit()">
+                {{#if submiting}}
+                    正在提交...
+                {{else}}
+                    提交申请
+                {{/if}}
+            </button>
+        </div>
+    </div>
+    <style>
+        {{style}}
+    </style>
+</div>

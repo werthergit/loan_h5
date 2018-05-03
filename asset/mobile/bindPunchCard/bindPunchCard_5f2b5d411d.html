@@ -1,0 +1,137 @@
+<div class="bind-punch-card">
+{{#if view == VIEW_MAIN}}
+    <div class="navbar">
+        <div class="left" on-click="back()">
+            <i class="icon-chevron-left"></i>
+        </div>
+        <div class="title">
+            完善卡信息
+        </div>
+    </div>
+
+    <div class="cells">
+        <div class="cell" on-click="set('view', VIEW_SELECT)">
+            {{#if bankName}}
+            <!-- <div class="cell-icon">
+                <img src="{{bankLogo}}">
+            </div> -->
+            <div class="cell-flex">
+                {{bankName}}
+                储蓄卡
+            </div>
+            {{else}}
+            <div class="cell-flex info">
+                请选择储蓄卡银行
+            </div>
+            {{/if}}
+            <i class="icon-chevron-right"></i>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                储蓄卡
+            </div>
+            <div class="cell-flex">
+                <input type="text" name="cardNumber" value="{{cardNumber}}" placeholder="请输入储蓄卡卡号">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                姓名
+            </div>
+            <div class="cell-flex">
+                <input type="text" name="customerName" value="{{customerName}}" placeholder="请输入持卡人姓名">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                身份证号
+            </div>
+            <div class="cell-flex">
+                <input type="text" name="customerIdNumber" value="{{customerIdNumber}}" placeholder="请输入持卡人身份证号">
+            </div>
+        </div>
+
+        <div class="cell">
+            <div class="cell-flex">
+                <input type="number" name="mobile" value="{{mobile}}" placeholder="预留手机号">
+            </div>
+            <!-- <i class="icon-question-o" on-click="showAnswer()"></i> -->
+        </div>
+
+        <div class="cell">
+            <div class="cell-flex">
+                <input type="text" name="code" value="{{code}}" placeholder="验证码">
+            </div>
+            <CodeButton options="{{verifyCodeButtonOptions}}" on-click="sendSmsCode()" />
+        </div>
+    </div>
+
+
+    <!-- <div class="protocol">
+        <div class="main">
+            <span on-click="toggleAccepted()">
+                {{#if accepted}}
+                    <i class="icon-check-o"></i>
+                {{else}}
+                    <i class="icon-circle-o"></i>
+                {{/if}}
+                <label>
+                    我已阅读并同意
+                </label>
+            </span>
+            <a href="/fenqi/userAgreement?purchase_id={{purchaseId}}">
+                《委托扣款授权书》
+            </a>
+        </div>
+    </div> -->
+
+
+    <div class="buttons">
+    {{ #if !submitting}}
+        <div class="button info btn-submit" on-click="submit()">
+            立即绑卡
+        </div>
+    {{ else }}
+        <div class="button muted btn-submit">
+            立即绑卡
+        </div>
+    {{ /if }}
+    </div>
+
+
+    <div class="question-call">
+        绑卡有问题？拨打
+        <a href="tel:400-910-910">4000-910-910</a>
+    </div>
+
+{{elseif view == VIEW_SELECT}}
+    <div class="navbar">
+        <div class="left" on-click="set('view', VIEW_MAIN)">
+            <i class="icon-chevron-left"></i>
+        </div>
+        <div class="title">
+            选择银行卡
+        </div>
+    </div>
+    <div class="cells">
+        <div class="cell">
+            请选择储蓄卡银行
+        </div>
+    </div>
+
+    <div class="cells">
+        {{#each list}}
+        <div class="cell" on-click="selectBank(url, bankName, bankCode, bank_no)">
+            <!-- <div class="cell-icon">
+                <img src="{{url}}">
+            </div> -->
+            <div class="cell-flex">
+                {{bankName}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+{{/if}}
+
+
+</div>

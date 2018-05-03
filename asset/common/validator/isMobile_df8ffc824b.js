@@ -1,0 +1,1 @@
+define('common/validator/isMobile_df8ffc824b',['require','exports','module'],function(){'use strict';return function(e){return/^1\d{10}$/.test(e);};});

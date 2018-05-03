@@ -1,0 +1,1 @@
+define('common/filter/formatTime_aa7514c226',['require','exports','module','moment'],function(require){'use strict';var e=require('moment');return function(m,r){return e(m).format(r||'HH:mm');};});

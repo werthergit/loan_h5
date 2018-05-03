@@ -1,0 +1,1 @@
+define("mobile/common/partial/loader_html", [], function () { return '<div class="loader"><div class="ball-pulse"><div></div><div></div><div></div></div></div>'});

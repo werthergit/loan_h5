@@ -1,0 +1,1 @@
+define("lodash/identity",function(){function n(n){return n}return n});

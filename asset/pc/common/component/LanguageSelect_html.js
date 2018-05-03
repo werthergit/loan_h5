@@ -1,0 +1,1 @@
+define("pc/common/component/LanguageSelect_html", [], function () { return '<div class="language-select{{#if options.className}} {{options.className}}{{/if}}"><Select options="{{options}}" /></div>'});

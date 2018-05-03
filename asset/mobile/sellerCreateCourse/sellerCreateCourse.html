@@ -1,0 +1,137 @@
+<div class="create-course">
+    <NavBar options="{{navBarOptions}}" />
+
+    <div class="cells">
+        <div class="cell">
+            <div class="cell-label">
+                课程名称：
+            </div>
+            <div class="cell-flex">
+                <input type="text" name="courseName" value="{{courseName}}" placeholder="请输入课程名称">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                课程品类：
+            </div>
+            <div class="cell-flex">
+                <input type="text" name="courseSubject" value="{{courseSubject}}" placeholder="请输入课程品类">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                课时数：
+            </div>
+            <div class="cell-flex">
+                <div class="counter">
+                    <button class="button info" on-click="minusLength()">
+                        <i class="icon-minus"></i>
+                    </button>
+                    <input type="number" name="courseLength" value="{{courseLength}}">
+                    <button class="button info" on-click="plusLength()">
+                        <i class="icon-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                开始时间：
+            </div>
+            <div class="cell-flex">
+                <input type="date" name="startTime" value="{{startTime}}" placeholder="年/月/日">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                结束时间：
+            </div>
+            <div class="cell-flex">
+                <input type="date" name="endTime" value="{{endTime}}" placeholder="年/月/日">
+            </div>
+        </div>
+    </div>
+
+    <div class="cells">
+        <div class="cell">
+            <div class="cell-label">
+                是否贴息：
+            </div>
+            <div class="cell-flex">
+                <select name="interestType" value="{{interestType}}">
+                    <option value="{{INTEREST_ORG}}">
+                        机构贴息
+                    </option>
+                    <option value="{{INTEREST_USER}}">
+                        用户贴息
+                    </option>
+                </select>
+            </div>
+            <i class="icon-chevron-right"></i>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                课程类型：
+            </div>
+            <div class="cell-flex">
+                <select name="courseType" value="{{courseType}}">
+                    <option value="{{COURSE_TYPE_CLASS}}">
+                        班课
+                    </option>
+                    <option value="{{COURSE_TYPE_ONE_TO_ONE}}">
+                        一对一
+                    </option>
+                </select>
+            </div>
+            <i class="icon-chevron-right"></i>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                课程期限：
+            </div>
+            <div class="cell-flex">
+                <select name="subCourseType" value="{{subCourseType}}">
+                    <option value="{{SUB_COURSE_TYPE_LIMIT}}">
+                        限时有效-单名学生申请
+                    </option>
+                    <option value="{{SUB_COURSE_TYPE_FOREVER}}">
+                        永久有效-随意申请
+                    </option>
+                </select>
+            </div>
+            <i class="icon-chevron-right"></i>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                课程金额：
+            </div>
+            <div class="cell-flex">
+                <input type="number" name="coursePrice" value="{{coursePrice}}" placeholder="请输入课程金额">
+            </div>
+            <div class="cell-addon">
+                元
+            </div>
+        </div>
+    </div>
+
+    <div class="cells-title">
+        课程简介
+    </div>
+    <div class="cells">
+        <div class="cell">
+            <div class="cell-textarea">
+                <textarea name="courseDesc" value="{{courseDesc}}" rows="5" placeholder="请介绍一下课程的相关信息..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button class="button info btn-submit"{{#if submiting}} disabled{{/if}} on-click="submit()">
+            {{#if submiting}}
+                正在生成...
+            {{else}}
+                生成订单
+            {{/if}}
+        </button>
+    </div>
+</div>

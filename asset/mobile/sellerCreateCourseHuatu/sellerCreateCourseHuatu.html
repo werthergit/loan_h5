@@ -1,0 +1,106 @@
+<div class="create-course">
+    <NavBar options="{{navBarOptions}}" />
+    <div class="form">
+        <div class="search-bar">
+            <div class="input">
+                {{#if query}}
+                <i class="btn-clear" on-click="set('query', '')"></i>
+                {{/if}}
+                <input type="text" name="query" value="{{query}}" placeholder="请输入课程班号">
+
+            </div>
+            {{#if query}}
+            <div class="buttons">
+                <button class="button info" on-click="search()">
+                    确定
+                </button>
+            </div>
+            {{/if}}
+
+        </div>
+    </div>
+    {{#if loading}}
+        {{> loader}}
+    {{elseif hasCourseInfo}}
+    <div class="cells">
+        <div class="cell">
+            <div class="cell-label">
+                课程班号：
+            </div>
+            <span class="cell-text">
+                {{courseId}}
+            </span>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                班名：
+            </div>
+            <span class="cell-text">
+                {{courseName}}
+            </span>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                科目：
+            </div>
+            <span class="cell-text">
+                {{courseSubject}}
+            </span>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                开课时间：
+            </div>
+            <span class="cell-text">
+                {{formatDate(startTime)}}
+            </span>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                结束时间：
+            </div>
+            <span class="cell-text">
+                {{formatDate(endTime)}}
+            </span>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                学时：
+            </div>
+            <span class="cell-text">
+                {{courseLength}}
+            </span>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                学费：
+            </div>
+            <span class="cell-text">
+                ￥{{formatMoney(coursePrice)}}
+            </span>
+        </div>
+        <div class="cell">
+            <div class="cell-label">
+                学杂费：
+            </div>
+            <span class="cell-text">
+                ￥{{formatMoney(otherPrice)}}
+            </span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button class="button info btn-submit"{{#if submiting}} disabled{{/if}} on-click="submit()">
+            {{#if submiting}}
+                提交中...
+            {{else}}
+                确定添加
+            {{/if}}
+        </button>
+    </div>
+    {{else}}
+        <div class="no-data">
+            {{noDataTip}}
+        </div>
+    {{/if}}
+</div>

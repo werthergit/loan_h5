@@ -1,0 +1,1 @@
+define("common/filter/formatDate",["require","exports","module","moment"],function(require){"use strict";var e=require("moment");return function(t,r){return e(t).format(r||"YYYY-MM-DD")}});

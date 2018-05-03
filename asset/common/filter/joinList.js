@@ -1,0 +1,1 @@
+define("common/filter/joinList",["require","exports","module"],function(){"use strict";return function(n,e,i){if(i)n=$.map(n,function(n){return n[i]});return n.join(e)}});

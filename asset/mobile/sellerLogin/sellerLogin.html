@@ -1,0 +1,29 @@
+
+<div class="login centered">
+
+    <div class="header">
+        <h1 class="logo"></h1>
+    </div>
+
+    <div class="wrapper">
+        <div class="input">
+            <input type="text" name="orgCode" value="{{orgCode}}" placeholder="机构授权码">
+            <i class="btn-question"></i>
+        </div>
+        <div class="input">
+            <input type="text" name="saleCode" value="{{saleCode}}" placeholder="销售授权码">
+            <i class="btn-question"></i>
+        </div>
+
+        <button class="button info btn-submit"{{#if submitting}} disabled{{/if}} on-click="submit()">
+            {{#if submitting}}
+                正在登录...
+            {{else}}
+                登录
+            {{/if}}
+        </button>
+
+    </div>
+
+
+</div>

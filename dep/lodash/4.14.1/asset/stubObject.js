@@ -1,0 +1,1 @@
+define("lodash/stubObject",function(){function n(){return{}}return n});

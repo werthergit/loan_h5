@@ -1,0 +1,1 @@
+define("pc/index/BusinessForm_css", [], function () { return '.business-form .form > .group{margin-bottom:18px;width:345px;}.business-form .form > .group + .group{margin-left:0}.business-form .form > .group > .label{width:10em}.business-form .input{width:203px}.business-form .price-input{width:80px}.business-form .button{width:180px;background-color:#40a3ef;color:#fff}'});

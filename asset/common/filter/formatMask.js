@@ -1,0 +1,1 @@
+define("common/filter/formatMask",["require","exports","module"],function(){"use strict";return function(r,i,n,t){if("string"!==$.type(r))r=""+r;if(null==i)i=0;if(null==n)n=r.length-1;var e="";if(i>0)e+=r.substr(0,i);if(n-i>0)e+=new Array(n-i+1).join(t||"*");if(n>0)e+=r.substr(n);return e}});

@@ -1,0 +1,1 @@
+define("mobile/sellerCreateCourse/constant",["require","exports","module"],function(require,exports){"use strict";exports.INTEREST_ORG=1,exports.INTEREST_USER=2,exports.COURSE_TYPE_CLASS=2,exports.COURSE_TYPE_ONE_TO_ONE=1,exports.SUB_COURSE_TYPE_LIMIT=0,exports.SUB_COURSE_TYPE_FOREVER=1});

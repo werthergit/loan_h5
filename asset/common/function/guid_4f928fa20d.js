@@ -1,0 +1,1 @@
+define('common/function/guid_4f928fa20d',['require','exports','module'],function(){'use strict';function n(n){for(var r='',t=0;n>t;t++)r+=(65536*(1+Math.random())|0).toString(16).substring(1);return r;}return function(){return[n(2),n(1),n(1),n(1),n(3)].join('-');};});

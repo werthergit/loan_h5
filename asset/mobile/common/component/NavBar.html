@@ -1,0 +1,33 @@
+<div class="navbar{{#if options.colorPrimary}} color-primary{{/if}}">
+    <div class="left">
+        {{#if options.left}}
+            {{options.left}}
+        {{elseif !options.noBack}}
+            <div id="navbar-back-button" on-click="back()">
+                <i class="icon-chevron-left"></i>
+            </div>
+
+            {{#if !options.needBack}}
+            <script>
+                (function () {
+                    if (history.length <= 2) {
+                        var btn = document.getElementById('navbar-back-button');
+                        btn.parentNode.removeChild(btn);
+                    }
+                })();
+            </script>
+            {{/if}}
+
+        {{/if}}
+    </div>
+    <div class="title">
+        {{#if options.title}}
+            {{options.title}}
+        {{/if}}
+    </div>
+    <div class="right">
+        {{#if options.right}}
+            {{options.right}}
+        {{/if}}
+    </div>
+</div>

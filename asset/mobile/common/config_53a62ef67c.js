@@ -1,0 +1,1 @@
+define('mobile/common/config_53a62ef67c',['require','exports','module'],function(require,exports){'use strict';var e,t=location.host;switch(t.substr(0,4)){case'test':e='test';break;case'beta':e='beta';break;default:e='dev'===t.substr(0,3)?'dev':'prod';}exports.ENV=e,exports.SITE_MAIN='http://'+('prod'===e?'www':e)+'.genshuixue.com';});

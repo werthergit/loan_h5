@@ -1,0 +1,1 @@
+define("common/filter/formatCardNumber",["require","exports","module"],function(){"use strict";return function(r,e){if("string"!==$.type(r))r=""+r;var t=r.match(/.{4}/g);if(t)return t.push(r.substr(t.join("").length)),t.join(e||" ");else return r}});

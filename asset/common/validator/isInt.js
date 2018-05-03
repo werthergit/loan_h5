@@ -1,0 +1,1 @@
+define("common/validator/isInt",["require","exports","module"],function(){"use strict";return function(t){return/^\d+$/.test(t)}});

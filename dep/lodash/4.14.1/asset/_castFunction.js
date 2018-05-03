@@ -1,0 +1,1 @@
+define("lodash/identity",function(){function n(n){return n}return n}),define("lodash/_castFunction",["./identity"],function(n){function t(t){return"function"==typeof t?t:n}return t});

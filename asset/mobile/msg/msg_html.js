@@ -1,0 +1,1 @@
+define("mobile/msg/msg_html", [], function () { return '<div class="msg-page">{{ #if success }}<i class="icon-check-circle"></i>{{ else }}<i class="icon-times-circle"></i>{{ /if }}<p>{{#each msg}}{{ this }}<br/>{{/each}}</p>{{ #if url && text }}<div class="action"><a class="button info" href="{{ url }}">{{ text }}</a></div>{{ /if }}</div>'});

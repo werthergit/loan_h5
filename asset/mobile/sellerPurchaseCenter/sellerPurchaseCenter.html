@@ -1,0 +1,104 @@
+
+<div class="course-list">
+
+    <NavBar options="{{navBarOptions}}" />
+
+    <div class="main scrollable">
+        <div class="form">
+            <div class="search-bar">
+                <div class="input">
+                    {{#if query}}
+                    <i class="btn-clear" on-click="set('query', '')"></i>
+                    {{else}}
+                    <i class="icon-search"></i>
+                    {{/if}}
+                    <input type="text" name="query" value="{{query}}" placeholder="输入班课或课程名称完整信息快速检索">
+                </div>
+                {{#if query}}
+                <div class="buttons">
+                    <div class="button info" on-click="search(1)">
+                        搜索
+                    </div>
+                    <div class="button cancel" on-click="set('query', '')">
+                        取消
+                    </div>
+                </div>
+                {{/if}}
+
+            </div>
+
+        </div>
+
+        <div class="total-count">
+            共{{courseCount}}个课程
+        </div>
+
+        <div class="list">
+        {{#if list.length > 0}}
+            {{#each list}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="code">
+                        班号：{{courseCode}}
+                    </div>
+                    <div class="name">
+                        {{courseName}}
+                    </div>
+                    <div class="details">
+                        <span>
+                            {{lessonHour}}课时
+                        </span>
+                        <span>
+                            开课时间：{{beginTimeStr}} 到 {{endTimeStr}}
+                        </span>
+                    </div>
+                    <div class="details">
+                        <span>
+                            学费：{{formatMoney(tuition)}}
+                        </span>
+                        <span>
+                            杂费：{{formatMoney(fees)}}
+                        </span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a class="button normal" href="sellerCourseOrderList.html?courseId={{courseId}}">
+                        查看分期订单
+                    </a>
+                    <a class="button info" href="sellerSubCourseShareDetail.html?courseId={{courseId}}">
+                        发送给学员
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+            {{#if loading}}
+                {{> loader}}
+            {{elseif pager.page < pager.count}}
+                <div class="button btn-more" on-click="search()">
+                    加载更多
+                </div>
+            {{/if}}
+        {{else}}
+            {{#if loading}}
+                {{> loader}}
+            {{else}}
+                <div class="no-data">
+
+                </div>
+            {{/if}}
+        {{/if}}
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="wrapper">
+            <a class="button info btn-submit" href="./sellerCreateCourseHuatu.html">
+                <span>
+                    + 添加课程
+                </span>
+            </a>
+        </div>
+    </div>
+
+</div>

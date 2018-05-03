@@ -1,0 +1,1 @@
+define("lodash/_insertWrapDetails",function(){function n(n,r){var t=r.length,a=t-1;return r[a]=(t>1?"& ":"")+r[a],r=r.join(t>2?", ":" "),n.replace(e,"{\n/* [wrapped with "+r+"] */\n")}var e=/\{(?:\n\/\* \[wrapped with .+\] \*\/)?\n?/;return n});

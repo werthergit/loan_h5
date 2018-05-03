@@ -1,0 +1,1 @@
+define("mobile/common/component/CodeButton_html", [], function () { return '<button class="button{{#if options.className}} {{options.className}}{{/if}}" on-click="click"{{#if options.disabled}} disabled{{/if}}>{{options.text}}</button>'});

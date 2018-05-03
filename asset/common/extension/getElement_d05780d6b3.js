@@ -1,0 +1,1 @@
+define('common/extension/getElement_d05780d6b3',['require','exports','module'],function(){'use strict';return function(e){return e.fragment.items[0].node;};});

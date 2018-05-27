@@ -32,20 +32,6 @@
         </div>
 
         <div class="cell">
-            <div class="cell-label">
-                课程类型:
-            </div>
-            <div class="cell-flex">
-                <select name="courseType" value="{{courseType}}">
-                    {{#each courseTypeOptions}}
-                    <option value="{{value}}">{{text}}</option>
-                    {{/each}}
-                </select>
-            </div>
-            <i class="icon-chevron-right"></i>
-        </div>
-
-        <div class="cell">
             课程开始时间：
             {{ formatDate(courseBeginTime) }}
         </div>
